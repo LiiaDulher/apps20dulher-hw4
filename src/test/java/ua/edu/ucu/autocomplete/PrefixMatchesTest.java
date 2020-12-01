@@ -25,7 +25,7 @@ public class PrefixMatchesTest {
         int expResult = 4;
 
         int actualResult = pm.load("ab", "abce", "abcd", "abcde", "abcdef");
-
+        
         assertEquals(expResult, actualResult);
     }
 
@@ -41,7 +41,7 @@ public class PrefixMatchesTest {
     }
 
     // testing load()
-    
+
     @Test
     public void testLoadAlreadyContains() {
         PrefixMatches pm = new PrefixMatches(new RWayTrie());
