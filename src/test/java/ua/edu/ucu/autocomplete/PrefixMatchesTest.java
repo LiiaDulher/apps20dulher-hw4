@@ -4,11 +4,13 @@ import org.junit.Ignore;
 import org.junit.Test;
 import ua.edu.ucu.tries.RWayTrie;
 
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.Assert.*;
 
 public class PrefixMatchesTest {
 
     // testing constructor
+
     @Test
     public void testConstructor() {
         PrefixMatches pm = new PrefixMatches(new RWayTrie());
@@ -25,7 +27,7 @@ public class PrefixMatchesTest {
         int expResult = 4;
 
         int actualResult = pm.load("ab", "abce", "abcd", "abcde", "abcdef");
-        
+
         assertEquals(expResult, actualResult);
     }
 
@@ -126,5 +128,50 @@ public class PrefixMatchesTest {
         boolean actualResult = pm.contains("abce");
 
         assertTrue(actualResult);
+    }
+
+    // testing wordsWithPrefix(pref)
+
+    @Ignore
+    @Test
+    public void testWordsWithToShortPrefixString() {
+        String pref = "a";
+        PrefixMatches pm = new PrefixMatches(new RWayTrie());
+        pm.load("abc", "abce", "abcd", "abcde", "abcdef");
+        Iterable<String> result = pm.wordsWithPrefix(pref);
+
+        String[] expResult = {};
+
+        assertThat(result, containsInAnyOrder(expResult));
+    }
+
+    // testing wordsWithPrefix(pref, k)
+
+    @Ignore
+    @Test
+    public void testWordsWithPrefixStringAndWrongK() {
+        String pref = "abc";
+        int k = 0;
+        PrefixMatches pm = new PrefixMatches(new RWayTrie());
+        pm.load("abc", "abce", "abcd", "abcde", "abcdef");
+        Iterable<String> result = pm.wordsWithPrefix(pref, k);
+
+        String[] expResult = {};
+
+        assertThat(result, containsInAnyOrder(expResult));
+    }
+
+    @Ignore
+    @Test
+    public void testWordsWithPrefixString() {
+        String pref = "ab";
+        PrefixMatches pm = new PrefixMatches(new RWayTrie());
+        pm.load("abc", "abce", "abcd", "abcde", "abcdef");
+        int k = 4;
+        Iterable<String> result = pm.wordsWithPrefix(pref, k);
+
+        String[] expResult = {"abc", "abce", "abcd", "abcde", "abcdef"};
+
+        assertThat(result, containsInAnyOrder(expResult));
     }
 }
