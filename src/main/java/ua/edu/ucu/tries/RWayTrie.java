@@ -51,8 +51,11 @@ public class RWayTrie implements Trie {
 
     @Override
     public void add(Tuple t) {
-        size++;
         String word = t.term;
+        if (contains(word)) {
+            return;
+        }
+        size++;
         Node currentNode = root;
         for (int i = 0; i < word.length() - 1; i++) {
             char c = word.charAt(i);

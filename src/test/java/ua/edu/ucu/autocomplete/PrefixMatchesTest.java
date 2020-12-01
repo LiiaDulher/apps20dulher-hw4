@@ -40,6 +40,18 @@ public class PrefixMatchesTest {
         assertEquals(expResult, actualResult);
     }
 
+    // testing load()
+    
+    @Test
+    public void testLoadAlreadyContains() {
+        PrefixMatches pm = new PrefixMatches(new RWayTrie());
+        int expResult = 4;
+
+        int actualResult = pm.load("abce", "abce", "abcd", "abcde", "abcdef");
+
+        assertEquals(expResult, actualResult);
+    }
+
     // testing contains()
 
     @Test
