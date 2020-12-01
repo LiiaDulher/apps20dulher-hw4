@@ -6,6 +6,7 @@ public class RWayTrie implements Trie {
 
     private static final int R = 26;
     private Node root = new Node(0);
+    private int size = 0;
 
     private static class Node {
         private int number;
@@ -50,6 +51,7 @@ public class RWayTrie implements Trie {
 
     @Override
     public void add(Tuple t) {
+        size++;
         String word = t.term;
         Node currentNode = root;
         for (int i = 0; i < word.length() - 1; i++) {
@@ -87,6 +89,7 @@ public class RWayTrie implements Trie {
         if (!contains(word)) {
             return false;
         }
+        size--;
         Node currentNode = root;
         Node finishNode = root;
         char key = word.charAt(0);
@@ -146,13 +149,7 @@ public class RWayTrie implements Trie {
 
     @Override
     public int size() {
-        Iterable<String> allWords = words();
-        int len = 0;
-        while (allWords.iterator().hasNext()) {
-            len++;
-            allWords.iterator().next();
-        }
-        return len;
+        return size;
         // throw new UnsupportedOperationException("Not supported yet.");
     }
 
