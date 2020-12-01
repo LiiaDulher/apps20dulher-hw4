@@ -3,7 +3,7 @@ package ua.edu.ucu.queue;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Queue implements Iterable{
+public class Queue implements Iterable {
     private ImmutableLinkedList queue;
 
     public Queue() {
@@ -29,10 +29,10 @@ public class Queue implements Iterable{
         return new QueueIterator();
     }
 
-    private class QueueIterator implements Iterator{
+    private class QueueIterator implements Iterator {
         private int current;
 
-        public QueueIterator(){
+        public QueueIterator() {
             current = 0;
         }
 

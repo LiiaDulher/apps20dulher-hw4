@@ -4,8 +4,6 @@ import ua.edu.ucu.queue.Queue;
 import ua.edu.ucu.tries.Trie;
 import ua.edu.ucu.tries.Tuple;
 
-import java.util.Collections;
-
 /**
  *
  * @author andrii
@@ -20,13 +18,13 @@ public class PrefixMatches {
     }
 
     public int load(String... strings) {
-        for (String str: strings){
+        for (String str: strings) {
             String[] words = {str};
             if (str.contains(" ")) {
                words = str.split(" ");
             }
             for (String word: words) {
-                if (word.length() > 2){
+                if (word.length() > 2) {
                     trie.add(new Tuple(word, word.length()));
                 }
             }
@@ -47,25 +45,28 @@ public class PrefixMatches {
 
     public Iterable<String> wordsWithPrefix(String pref) {
         if (pref.length() < 2) {
-            return new Queue() ;
+            return new Queue();
         }
-        return trie.wordsWithPrefix(pref);
+        Iterable<String> str = trie.wordsWithPrefix(pref);
+        // return trie.wordsWithPrefix(pref);
+        System.out.println("done");
+        return str;
         // throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public Iterable<String> wordsWithPrefix(String pref, int k) {
         if (pref.length() < 2) {
-            return Collections.emptyList() ;
+            return new Queue();
         }
         Iterable<String> allWords = wordsWithPrefix(pref);
         Queue kWords = new Queue();
         if (k > 0) {
             int len = pref.length() + k;
-            if (pref.length() == 2){
+            if (pref.length() == 2) {
                 len++;
             }
             for (String str : allWords) {
-                if (str.length() < len){
+                if (str.length() < len) {
                     kWords.enqueue(str);
                 }
             }

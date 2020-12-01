@@ -84,7 +84,7 @@ public class RWayTrie implements Trie {
 
     @Override
     public boolean delete(String word) {
-        if (!contains(word)){
+        if (!contains(word)) {
             return false;
         }
         Node currentNode = root;
@@ -99,7 +99,7 @@ public class RWayTrie implements Trie {
             currentNode = currentNode.getNext(c);
         }
         char c = word.charAt(word.length() - 1);
-        if (currentNode.getNext(c).hasNext()){
+        if (currentNode.getNext(c).hasNext()) {
             currentNode.setNumber(0);
         } else {
             finishNode.setNext(key, null);
@@ -119,20 +119,19 @@ public class RWayTrie implements Trie {
         Node startNode = root;
         for (int i = 0; i < s.length(); i++){
             char c = s.charAt(i);
-            if (startNode.getNext(c) == null){
+            if (startNode.getNext(c) == null) {
                 return null;
             }
             startNode = startNode.getNext(c);
         }
         Queue q = new Queue();
-        collect(root, s, q);
-        // todo write
+        collect(startNode, s, q);
+        System.out.println("words done");
         return q;
         // throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    private void collect(Node x, String pre, Queue q)
-    {
+    private void collect(Node x, String pre, Queue q) {
         if (x == null) {
             return;
         }
@@ -149,11 +148,11 @@ public class RWayTrie implements Trie {
     public int size() {
         Iterable<String> allWords = words();
         int len = 0;
-        while(allWords.iterator().hasNext()) {
+        while (allWords.iterator().hasNext()) {
             len++;
             allWords.iterator().next();
         }
-        return  len;
+        return len;
         // throw new UnsupportedOperationException("Not supported yet.");
     }
 
