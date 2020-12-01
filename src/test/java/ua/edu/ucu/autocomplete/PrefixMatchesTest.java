@@ -8,6 +8,38 @@ import static org.junit.Assert.*;
 
 public class PrefixMatchesTest {
 
+    // testing constructor
+    @Test
+    public void testConstructor() {
+        PrefixMatches pm = new PrefixMatches(new RWayTrie());
+        pm.load("ab", "abce", "abcd", "abcde", "abcdef");
+
+        boolean actualResult = pm.contains("ab");
+
+        assertFalse(actualResult);
+    }
+
+    @Test
+    public void testConstructorSize() {
+        PrefixMatches pm = new PrefixMatches(new RWayTrie());
+        int expResult = 4;
+
+        int actualResult = pm.load("ab", "abce", "abcd", "abcde", "abcdef");
+
+        assertEquals(expResult, actualResult);
+    }
+
+    @Test
+    public void testConstructorLine() {
+        PrefixMatches pm = new PrefixMatches(new RWayTrie());
+        int expResult = 6;
+
+        int actualResult = pm.load("abc", "abce jhg", "abcd", "abcde", "abcdef");
+
+
+        assertEquals(expResult, actualResult);
+    }
+
     // testing contains()
 
     @Test

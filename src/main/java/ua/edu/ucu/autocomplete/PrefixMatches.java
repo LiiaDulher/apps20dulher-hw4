@@ -55,9 +55,6 @@ public class PrefixMatches {
     }
 
     public Iterable<String> wordsWithPrefix(String pref, int k) {
-        if (pref.length() < 2) {
-            return new Queue();
-        }
         Iterable<String> allWords = wordsWithPrefix(pref);
         Queue kWords = new Queue();
         if (k > 0) {
