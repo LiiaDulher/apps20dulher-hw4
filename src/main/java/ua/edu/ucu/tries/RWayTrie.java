@@ -132,7 +132,6 @@ public class RWayTrie implements Trie {
         }
         Queue q = new Queue();
         collect(startNode, s, q);
-        System.out.println("words done");
         return q;
         // throw new UnsupportedOperationException("Not supported yet.");
     }

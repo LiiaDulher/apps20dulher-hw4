@@ -132,7 +132,6 @@ public class PrefixMatchesTest {
 
     // testing wordsWithPrefix(pref)
 
-    @Ignore
     @Test
     public void testWordsWithTooShortPrefixString() {
         String pref = "a";
@@ -147,7 +146,6 @@ public class PrefixMatchesTest {
 
     // testing wordsWithPrefix(pref, k)
 
-    @Ignore
     @Test
     public void testWordsWithPrefixStringAndWrongK() {
         String pref = "abc";
@@ -161,7 +159,6 @@ public class PrefixMatchesTest {
         assertThat(result, containsInAnyOrder(expResult));
     }
 
-    @Ignore
     @Test
     public void testWordsWithPrefixString() {
         String pref = "ab";

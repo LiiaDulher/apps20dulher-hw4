@@ -47,10 +47,7 @@ public class PrefixMatches {
         if (pref.length() < 2) {
             return new Queue();
         }
-        Iterable<String> str = trie.wordsWithPrefix(pref);
-        // return trie.wordsWithPrefix(pref);
-        System.out.println("done");
-        return str;
+        return trie.wordsWithPrefix(pref);
         // throw new UnsupportedOperationException("Not supported yet.");
     }
 

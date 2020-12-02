@@ -26,29 +26,6 @@ public class Queue implements Iterable {
 
     @Override
     public Iterator iterator() {
-        return new QueueIterator();
-    }
-
-    private class QueueIterator implements Iterator {
-        private int current;
-
-        public QueueIterator() {
-            current = 0;
-        }
-
-        @Override
-        public boolean hasNext() {
-            return queue.size() > current;
-        }
-
-        @Override
-        public Object next() {
-            if (hasNext()) {
-                Object data = queue.get(current);
-                current++;
-                return data;
-            }
-            throw new NoSuchElementException();
-        }
+        return new QueueIterator(this.queue);
     }
 }
