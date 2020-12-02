@@ -1,7 +1,6 @@
 package ua.edu.ucu.queue;
 
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 public class Queue implements Iterable {
     private ImmutableLinkedList queue;

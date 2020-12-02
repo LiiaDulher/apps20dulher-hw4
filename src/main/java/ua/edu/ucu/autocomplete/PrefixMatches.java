@@ -14,7 +14,6 @@ public class PrefixMatches {
 
     public PrefixMatches(Trie trie) {
         this.trie = trie;
-        // throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public int load(String... strings) {
@@ -30,17 +29,14 @@ public class PrefixMatches {
             }
         }
         return size();
-        // throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public boolean contains(String word) {
         return trie.contains(word);
-        // throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public boolean delete(String word) {
         return trie.delete(word);
-        // throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public Iterable<String> wordsWithPrefix(String pref) {
@@ -48,7 +44,6 @@ public class PrefixMatches {
             return new Queue();
         }
         return trie.wordsWithPrefix(pref);
-        // throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public Iterable<String> wordsWithPrefix(String pref, int k) {
@@ -66,11 +61,9 @@ public class PrefixMatches {
             }
         }
         return kWords;
-        // throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public int size() {
         return trie.size();
-        // throw new UnsupportedOperationException("Not supported yet.");
     }
 }

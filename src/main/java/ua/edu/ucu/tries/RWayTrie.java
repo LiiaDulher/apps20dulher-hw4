@@ -70,7 +70,6 @@ public class RWayTrie implements Trie {
         } else {
             currentNode.setNumber(t.weight);
         }
-        // throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
@@ -84,7 +83,6 @@ public class RWayTrie implements Trie {
             currentNode = currentNode.getNext(c);
         }
         return currentNode.getValue() != 0;
-        // throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
@@ -111,13 +109,11 @@ public class RWayTrie implements Trie {
             finishNode.setNext(key, null);
         }
         return true;
-        // throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public Iterable<String> words() {
         return wordsWithPrefix("");
-        // throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
@@ -133,7 +129,6 @@ public class RWayTrie implements Trie {
         Queue q = new Queue();
         collect(startNode, s, q);
         return q;
-        // throw new UnsupportedOperationException("Not supported yet.");
     }
 
     private void collect(Node x, String pre, Queue q) {
@@ -152,7 +147,6 @@ public class RWayTrie implements Trie {
     @Override
     public int size() {
         return size;
-        // throw new UnsupportedOperationException("Not supported yet.");
     }
 
 }
