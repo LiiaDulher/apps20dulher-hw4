@@ -134,7 +134,7 @@ public class PrefixMatchesTest {
 
     @Ignore
     @Test
-    public void testWordsWithToShortPrefixString() {
+    public void testWordsWithTooShortPrefixString() {
         String pref = "a";
         PrefixMatches pm = new PrefixMatches(new RWayTrie());
         pm.load("abc", "abce", "abcd", "abcde", "abcdef");
