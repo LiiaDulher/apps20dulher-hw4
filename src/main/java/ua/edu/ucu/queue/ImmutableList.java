@@ -2,7 +2,7 @@ package ua.edu.ucu.queue;
 
 // У результаті змін, що призводять на модифікації (зміну стану) колекції має
 // повртатись нова колекція
-public interface ImmutableList{
+public interface ImmutableList {
 
     ImmutableList add(Object e); //додає елемент у кінець колекції
 

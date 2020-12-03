@@ -1,8 +1,6 @@
 package ua.edu.ucu.queue;
 
-import java.util.Iterator;
-
-public final class ImmutableLinkedList implements ImmutableList{
+public final class ImmutableLinkedList implements ImmutableList {
 
     private final Node first;
     private final int listLength;
