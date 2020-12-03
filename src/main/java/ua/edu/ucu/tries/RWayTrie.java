@@ -68,7 +68,7 @@ public class RWayTrie implements Trie {
         if (currentNode.getNext(c) == null) {
             currentNode.setNext(c, new Node(t.weight));
         } else {
-            currentNode.setNumber(t.weight);
+            currentNode.getNext(c).setNumber(t.weight);
         }
     }
 
@@ -91,19 +91,18 @@ public class RWayTrie implements Trie {
             return false;
         }
         size--;
-        Node currentNode = root;
         Node finishNode = root;
         char key = word.charAt(0);
-        for (int i = 0; i < word.length() - 1; i++) {
+        Node currentNode = root.getNext(key);
+        for (int i = 1; i < word.length(); i++) {
             char c = word.charAt(i);
             if (currentNode.getValue() != 0) {
                 finishNode = currentNode;
-                key = c;
+                key = word.charAt(i);
             }
             currentNode = currentNode.getNext(c);
         }
-        char c = word.charAt(word.length() - 1);
-        if (currentNode.getNext(c).hasNext()) {
+        if (currentNode.hasNext()) {
             currentNode.setNumber(0);
         } else {
             finishNode.setNext(key, null);
