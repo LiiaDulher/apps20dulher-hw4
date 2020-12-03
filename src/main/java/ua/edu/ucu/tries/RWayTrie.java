@@ -122,7 +122,7 @@ public class RWayTrie implements Trie {
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (startNode.getNext(c) == null) {
-                return null;
+                return new Queue();
             }
             startNode = startNode.getNext(c);
         }
