@@ -12,7 +12,7 @@ public class RWayTrie implements Trie {
         private int number;
         private Node[] next = new Node[R];
 
-        public Node(int num){
+        public Node(int num) {
             number = num;
             for (int i = 0; i < next.length; i++) {
                 next[i] = null;
@@ -41,7 +41,7 @@ public class RWayTrie implements Trie {
 
         public boolean hasNext() {
             for (int i = 0; i < next.length; i++) {
-                if (next[i] != null){
+                if (next[i] != null) {
                     return true;
                 }
             }
@@ -65,7 +65,7 @@ public class RWayTrie implements Trie {
             currentNode = currentNode.getNext(c);
         }
         char c = word.charAt(word.length() - 1);
-        if (currentNode.getNext(c) == null){
+        if (currentNode.getNext(c) == null) {
             currentNode.setNext(c, new Node(t.weight));
         } else {
             currentNode.setNumber(t.weight);
@@ -119,7 +119,7 @@ public class RWayTrie implements Trie {
     @Override
     public Iterable<String> wordsWithPrefix(String s) {
         Node startNode = root;
-        for (int i = 0; i < s.length(); i++){
+        for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (startNode.getNext(c) == null) {
                 return null;
