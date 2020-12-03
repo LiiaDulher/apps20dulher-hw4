@@ -24,7 +24,7 @@ public class RWayTrie implements Trie {
         }
 
         public Node getNext(char key) {
-            return next[(int)key - (int)'a'];
+            return next[(int) key - (int) 'a'];
         }
 
         public Node getNext(int key) {
@@ -32,7 +32,7 @@ public class RWayTrie implements Trie {
         }
 
         public void setNext(char key, Node nextNode) {
-            next[(int)key - (int)'a'] = nextNode;
+            next[(int) key - (int) 'a'] = nextNode;
         }
 
         public void setNumber(int num) {
@@ -139,7 +139,7 @@ public class RWayTrie implements Trie {
             q.enqueue(pre);
         }
         for (int c = 0; c < R; c++) {
-            char symbol = (char)((int)'a' + c);
+            char symbol = (char) ((int) 'a' + c);
             collect(x.getNext(c), pre + symbol, q);
         }
     }
