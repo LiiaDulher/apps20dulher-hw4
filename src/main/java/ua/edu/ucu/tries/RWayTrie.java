@@ -12,7 +12,7 @@ public class RWayTrie implements Trie {
         private int number;
         private Node[] next = new Node[R];
 
-        public Node(int num) {
+        Node(int num) {
             number = num;
             for (int i = 0; i < next.length; i++) {
                 next[i] = null;
